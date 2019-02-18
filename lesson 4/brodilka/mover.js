@@ -16,35 +16,38 @@ let mover = {
         let old_y = nextPoint.y;
 
         // 2, 6, 8, 4
+        // добавлены ходы по диагонали
         switch (direction) {
             case '2':
-                nextPoint.y--;
+                nextPoint.y++;
                 break;
             case '6':
                 nextPoint.x++;
                 break;
             case '8':
-                nextPoint.y++;
+                nextPoint.y--;
                 break;
             case '4':
                 nextPoint.x--;
                 break;
-            case 1:
-                nextPoint.y--;
-                nextPoint.x--;
-                break;
-            case 3:
-                nextPoint.y--;
-                nextPoint.x++;
-                break;
-            case 7:
-                nextPoint.x--;
+            case '1':
                 nextPoint.y++;
+                nextPoint.x--;
                 break;
-            case 9:
+            case '3':
                 nextPoint.y++;
                 nextPoint.x++;
                 break;
+            case '7':
+                nextPoint.x--;
+                nextPoint.y--;
+                break;
+            case '9':
+                nextPoint.y--;
+                nextPoint.x++;
+                break;
+            case '5':
+                alert("Ничего не делаю, починяю примус!");
 
         }
         
