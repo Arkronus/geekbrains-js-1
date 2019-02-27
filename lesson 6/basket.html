@@ -1,0 +1,79 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Basket</title>
+        <link href="css\bootstrap.css" rel="stylesheet">
+
+        <style>
+            h2 {
+                text-align: left;
+            },
+
+            input {
+                width: 200px;
+            }
+        </style>
+        
+    </head>
+    <body>
+        <div class="container">
+            <h2>Lesson 5. Basket</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <form class="form-horizontal">
+                    <fieldset>
+                        <!-- Form Name -->
+                        <legend>Добавить новый товар</legend>
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-6 control-label" for="textinput">Товар</label>
+                            <div class="col-md-6">
+                                <input id="name" name="name" type="text" placeholder="Название товара" class="form-control input-md" required="">
+                                
+                            </div>
+                        </div>
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-6 control-label" for="quantity">Количество</label>
+                            <div class="col-md-6">
+                                <input id="quantity" name="quantity" type="text" placeholder="Количество товаров" class="form-control input-md" required="">
+                                
+                            </div>
+                        </div>
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-6 control-label" for="price">Цена</label>
+                            <div class="col-md-6">
+                                <input id="price" name="price" type="text" placeholder="Цена за единицу товара" class="form-control input-md" required="">
+                                
+                            </div>
+                        </div>
+                        <!-- Button -->
+                        <div class="form-group">
+                            <label class="col-md-6 control-label" for="placeToCart"></label>
+                            <div class="col-md-6">
+                                <button id="placeToCart" name="placeToCart" class="btn btn-primary">Добавить в корзину</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+                </div>
+                <div class="col-md-6" id='goodsList'>
+                    <h2>Список товаров</h2>
+                    <div id="totals">
+                        
+                    </div>
+                    <table class="table" id='table'>
+                        <th>Название</th>
+                        <th>Количество</th>
+                        <th>Цена за единицу</th>
+                        <th>Итого по строке</th>
+                    </table>
+                </div>
+                
+            </div>
+        </div>
+        
+        <script async src="basket.js"></script>
+    </body>
+</html>
