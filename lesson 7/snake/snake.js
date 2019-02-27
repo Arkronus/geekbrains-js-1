@@ -25,16 +25,20 @@ let snake = {
 
     getNextStepHeadPoint() {
         let firstPoint = this.body[0];
-
+        let newPointCoord = 0
         switch (this.direction) {
             case 'up':
-                return {x: firstPoint.x, y: firstPoint.y - 1};
+                newPointCoord = firstPoint.y === 0 ? settings.rowsCount-1 : firstPoint.y - 1
+                return {x: firstPoint.x, y: newPointCoord};
             case 'down':
-                return {x: firstPoint.x, y: firstPoint.y + 1};
+                newPointCoord = firstPoint.y === settings.rowsCount-1 ? 0 : firstPoint.y + 1
+                return {x: firstPoint.x, y: newPointCoord};
             case 'right':
-                return {x: firstPoint.x + 1, y: firstPoint.y};
+                newPointCoord = firstPoint.x === settings.colsCount - 1 ? 0 : firstPoint.x + 1
+                return {x: newPointCoord, y: firstPoint.y};
             case 'left' :
-                return {x: firstPoint.x - 1, y: firstPoint.y};
+                newPointCoord = firstPoint.x === 0 ? settings.colsCount - 1 : firstPoint.x - 1
+                return {x: newPointCoord, y: firstPoint.y};
         }
     },
 
@@ -334,11 +338,7 @@ let game = {
     canSnakeMakeStep() {
         let nextHeadPoint = this.snake.getNextStepHeadPoint();
 
-        return !this.snake.isBodyPoint(nextHeadPoint) &&
-            nextHeadPoint.x < this.settings.colsCount &&
-            nextHeadPoint.y < this.settings.rowsCount &&
-            nextHeadPoint.x >= 0 &&
-            nextHeadPoint.y >= 0;
+        return !this.snake.isBodyPoint(nextHeadPoint);
     }
 };
 
